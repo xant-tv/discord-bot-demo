@@ -9,11 +9,11 @@ function ready(bot) {
 // Message
 function message(msg) {
     const prefix = "!";
-    if (msg.content === prefix.concat("ping")) {
+    if (msg.content === prefix.concat("uptime")) {
         responses.uptime(msg);
     } 
-    else if (msg.content.startsWith(prefix.concat("tag"))) {
-        responses.tag(msg);
+    else if (msg.content.startsWith(prefix.concat("whois"))) {
+        responses.whois(msg);
     }
 };
 

@@ -12,11 +12,11 @@ function uptime(msg) {
     msg.channel.send(process.uptime());
 };
 
-// Tag
-function tag(msg) {
+// Whois
+function whois(msg) {
     if (msg.mentions.users.size) {
         const tagged = msg.mentions.users.first();
-        msg.channel.send(`Tagging ${tagged.username} in this reply.`);
+        msg.channel.send(`Your account name is actually "${tagged.username}".`);
     } 
     else {
         msg.reply('Please tag a valid user!');
@@ -26,5 +26,5 @@ function tag(msg) {
 module.exports = {
     "login": login,
     "uptime": uptime,
-    "tag": tag
+    "whois": whois
 };
