@@ -1,6 +1,10 @@
+// Logger
+const Logger = require('../utils/logger.js');
+const logger = Logger.create("DiscordBot");
+
 // Login
-function login(bot) {
-    console.info(`Logged in as ${bot.user.tag}!`)
+function login() {
+    logger.log("Logged in!");
 };
 
 // Uptime

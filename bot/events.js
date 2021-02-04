@@ -1,7 +1,5 @@
-const responses = require('./responses.js');
-
 // Responses
-responses = require('./responses.js');
+const responses = require('./responses.js');
 
 // Ready
 function ready(bot) {
@@ -10,10 +8,11 @@ function ready(bot) {
 
 // Message
 function message(msg) {
-    if (msg.content === '!ping') {
+    const prefix = "!";
+    if (msg.content === prefix.concat("ping")) {
         responses.uptime(msg);
     } 
-    else if (msg.content.startsWith('!tag')) {
+    else if (msg.content.startsWith(prefix.concat("tag"))) {
         responses.tag(msg);
     }
 };

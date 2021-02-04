@@ -8,14 +8,13 @@ const router = Router.create();
 app.use('/', router);
 
 // Logger
-function log(port) {
-    console.log(`Server running on port ${port}`);
-};
+const Logger = require('../utils/logger.js');
+const logger = Logger.create("AppServer");
 
 // Run
 function run(override_port) {
     const port = override_port || process.env.SERVER_PORT || 3000;
-    let server = app.listen(port, log(port));
+    let server = app.listen(port, logger.log("Exposing keepalive endpoint."));
     return server;
 };
 
