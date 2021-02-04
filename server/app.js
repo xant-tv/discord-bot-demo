@@ -13,7 +13,7 @@ const logger = Logger.create("AppServer");
 
 // Run
 function run(override_port) {
-    const port = override_port || process.env.SERVER_PORT || 3000;
+    const port = override_port || process.env.PORT || 3000;
     let server = app.listen(port, logger.log("Exposing keepalive endpoint."));
     return server;
 };
