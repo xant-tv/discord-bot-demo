@@ -4,17 +4,17 @@ class Logger {
         this.sep = sep;
     };
     log(msg) {
-        console.log(this.module + this.sep, msg);
+        console.log(this.module, this.sep, msg);
     };
     info(msg) {
-        console.info(this.module + this.sep, msg);
+        console.info(this.module, this.sep, msg);
     };
     debug(msg) {
-        console.debug(this.module + this.sep, msg);
+        console.debug(this.module, this.sep, msg);
     };
 };
 
-function create(module, sep = " | ") {
+function create(module, sep = "|") {
     return new Logger(module, sep);
 };
 
