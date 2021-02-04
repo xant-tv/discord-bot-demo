@@ -3,27 +3,14 @@ class Logger {
         this.module = module;
         this.sep = sep;
     };
-    format(raw) {
-        const args = [
-            this.module,
-            toString(raw)
-        ];
-        return args;
+    log(msg) {
+        console.log(this.module + this.sep, msg);
     };
-    log(raw) {
-        const args = format(raw);
-        const msg = args.join(this.sep);
-        console.log(msg);
+    info(msg) {
+        console.info(this.module + this.sep, msg);
     };
-    info(raw) {
-        const args = format(raw);
-        const msg = args.join(this.sep);
-        console.info(msg);
-    };
-    debug(raw) {
-        const args = format(raw);
-        const msg = args.join(this.sep);
-        console.debug(msg);
+    debug(msg) {
+        console.debug(this.module + this.sep, msg);
     };
 };
 
