@@ -6,9 +6,9 @@ function ping(req, res) {
     };
     res.json(content);
     return res;
-}
+};
 
 // Export
 module.exports = {
     "ping": ping
-}
+};

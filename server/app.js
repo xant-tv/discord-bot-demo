@@ -10,7 +10,7 @@ app.use('/', router);
 // Logger
 function log(port) {
     console.log(`Server running on port ${port}`);
-}
+};
 
 // Run
 function run(override_port) {
@@ -22,4 +22,4 @@ function run(override_port) {
 // Export
 module.exports = {
     "run": run
-}
+};
