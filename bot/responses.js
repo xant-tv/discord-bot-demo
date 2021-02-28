@@ -28,7 +28,7 @@ function whois(msg) {
         .setThumbnail(user.displayAvatarURL())
         .setDescription("Information about this user.")
         .addField("Nickname:", member.nickname)
-        .addField("Roles:", member.roles.map(roles => `${roles}`).join(" | "))
+        .addField("Roles:", member.roles.cache.map(roles => `${roles}`).join(" | "))
         .setTimestamp();
     msg.channel.send(embed);
 };
