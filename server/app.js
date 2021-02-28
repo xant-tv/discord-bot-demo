@@ -1,14 +1,14 @@
 // Node
-const express = require('express');
+const express = require("express");
 const app = express();
 
 // Router
-const Router = require('./router.js');
+const Router = require("./router.js");
 const router = Router.create();
-app.use('/', router);
+app.use("/", router);
 
 // Logger
-const Logger = require('../utils/logger.js');
+const Logger = require("../utils/logger.js");
 const logger = Logger.create("AppServer");
 
 // Run

@@ -1,5 +1,8 @@
+// Discord
+const Discord = require("discord.js");
+
 // Responses
-const responses = require('./responses.js');
+const responses = require("./responses.js");
 
 // Ready
 function ready(bot) {

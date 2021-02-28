@@ -1,5 +1,8 @@
+// Discord
+const Discord = require("discord.js");
+
 // Logger
-const Logger = require('../utils/logger.js');
+const Logger = require("../utils/logger.js");
 const logger = Logger.create("DiscordBot");
 
 // Login
@@ -14,13 +17,20 @@ function uptime(msg) {
 
 // Whois
 function whois(msg) {
+    let user = msg.author;
     if (msg.mentions.users.size) {
-        const tagged = msg.mentions.users.first();
-        msg.channel.send(`Your account name is actually "${tagged.username}".`);
-    } 
-    else {
-        msg.reply('Please tag a valid user!');
-    };
+        user = msg.mentions.users.first();
+    }
+    let member = msg.guild.member(user);
+    const embed = new Discord.MessageEmbed()
+        .setColor(member.displayHexColor)
+        .setAuthor(user.tag, user.displayAvatarURL())
+        .setThumbnail(user.displayAvatarURL())
+        .setDescription("Information about this user.")
+        .addField("Nickname:", member.nickname)
+        .addField("Roles:", member.roles.map(roles => `${roles}`).join(" | "))
+        .setTimestamp();
+    msg.channel.send(embed);
 };
 
 module.exports = {

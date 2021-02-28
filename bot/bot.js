@@ -1,12 +1,12 @@
 // Discord
-const discord = require('discord.js');
+const Discord = require("discord.js");
 
 // Events
-const events = require('./events.js');
+const events = require("./events.js");
 
 // Create
 function create() {
-    const bot = new discord.Client();
+    const bot = new Discord.Client();
     bot.on('ready', events.ready);
     bot.on('message', events.message);
     return bot;

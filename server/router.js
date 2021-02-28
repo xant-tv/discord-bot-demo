@@ -1,13 +1,13 @@
 // Node
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 // Handler
-const handler = require('./handler.js');
+const handler = require("./handler.js");
 
 // Router
 function create() {
-    router.get('/', handler.ping);
+    router.get("/", handler.ping);
     return router;
 };
 
