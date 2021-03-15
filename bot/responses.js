@@ -5,9 +5,28 @@ const Discord = require("discord.js");
 const Logger = require("../utils/logger.js");
 const logger = Logger.create("DiscordBot");
 
+// Hold
+let monitorId = null;
+
 // Login
-function login() {
+function login(bot) {
     logger.log("Logged in!");
+};
+
+// Monitor
+function monitor(msg) {
+    // Definitely won't be race conditions issues here.
+    if (monitorId) {
+        clearInterval(monitorId);
+        monitorId = null;
+    }
+    else {
+        monitorId = setInterval(dummy, 5000, msg);
+    }
+};
+
+function dummy(msg) {
+    msg.channel.send("Have you played Destiny 2 lately?");
 };
 
 // Uptime
@@ -35,6 +54,7 @@ function whois(msg) {
 
 module.exports = {
     "login": login,
+    "monitor": monitor,
     "uptime": uptime,
     "whois": whois
 };
