@@ -15,6 +15,7 @@ function login(bot) {
 
 // Monitor
 function monitor(msg) {
+    logger.log("Responding to monitor command.");
     // Definitely won't be race conditions issues here.
     if (monitorId) {
         clearInterval(monitorId);
@@ -31,11 +32,13 @@ function dummy(msg) {
 
 // Uptime
 function uptime(msg) {
+    logger.log("Responding to uptime command.");
     msg.channel.send(process.uptime());
 };
 
 // Whois
 function whois(msg) {
+    logger.log("Responding to identity command.");
     let user = msg.author;
     if (msg.mentions.users.size) {
         user = msg.mentions.users.first();

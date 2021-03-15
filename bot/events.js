@@ -16,7 +16,7 @@ function message(msg) {
         responses.uptime(msg);
     }
     else if (msg.content === prefix.concat("monitor")) {
-        responses.monitor(bot);
+        responses.monitor(msg);
     }
     else if (msg.content.startsWith(prefix.concat("whois"))) {
         responses.whois(msg);
